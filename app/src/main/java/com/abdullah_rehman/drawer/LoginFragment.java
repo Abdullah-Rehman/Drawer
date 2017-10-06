@@ -51,15 +51,18 @@ public class LoginFragment extends Fragment {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(TextUtils.isEmpty(etEmail.getText())){
-
-                } else if(TextUtils.isEmpty(etEmail.getText())){
-
-                } else{
+                if (TextUtils.isEmpty(etEmail.getText())) {
+                    etEmail.setError("Required");
+                    etEmail.requestFocus();
+                } else if (TextUtils.isEmpty(etPassword.getText())) {
+                    etPassword.setError("Required");
+                    etPassword.requestFocus();
+                } else {
                     String email, password;
                     email = etEmail.getText().toString();
                     password = etPassword.getText().toString();
                     sessionManager.createLoginSession(email, password);
+                    getActivity().finish();
                 }
             }
         });
