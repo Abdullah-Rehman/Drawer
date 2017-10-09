@@ -112,8 +112,8 @@ public class MainActivity extends AppCompatActivity
             fragmentManager.beginTransaction().replace(R.id.frameContainer, new ProfileFragment()).commit();
         } else if (id == R.id.nav_make_request) {
             fragmentManager.beginTransaction().replace(R.id.frameContainer, new BloodGroupFragment()).commit();
-        } else if (id == R.id.nav_slideshow) {
-
+        } else if (id == R.id.nav_req_list) {
+            fragmentManager.beginTransaction().replace(R.id.frameContainer, new RequestsListFragment()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
